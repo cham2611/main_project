@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- 상단 타이틀 바 -->
+    <RelativeLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1976D2"
+        android:elevation="4dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="AI 진로 상담"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/titleUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:layout_toStartOf="@id/loginButton"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="로그인"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+    <!-- 로그인 후 대화 기록 관련 버튼들 -->
+    <LinearLayout
+        android:id="@+id/chatHistoryButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleBar"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:visibility="gone"
+        android:background="#F5F5F5">
+
+        <!-- 새 대화 시작 버튼 -->
+        <Button
+            android:id="@+id/newChatButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="새 대화 시작"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#1976D2"/>
+
+        <!-- 이전 상담 기록 버튼 -->
+        <Button
+            android:id="@+id/historyButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="이전 상담 기록"
+            android:backgroundTint="#1976D2"/>
+    </LinearLayout>
+
+    <!-- 채팅 내용 -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/inputLayout"
+        android:layout_below="@id/chatHistoryButtons"
+        android:background="#F5F8FA"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:id="@+id/chatLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </ScrollView>
+
+    <!-- 입력 영역 -->
+    <LinearLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:orientation="horizontal">
+
+        <!-- 음성 입력 버튼 -->
+        <ImageButton
+            android:id="@+id/voiceInputButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:tint="#1976D2"
+            android:layout_marginEnd="8dp"/>
+
+        <EditText
+            android:id="@+id/messageInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/input_background"
+            android:hint="진로 고민이 있으신가요?"
+            android:maxLines="4"
+            android:padding="12dp"
+            android:textColorHint="#78909C" />
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="상담"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1976D2"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
